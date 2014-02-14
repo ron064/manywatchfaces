@@ -13,7 +13,8 @@ Watch face modification steps
 =============================
 
 - Remove references to Window in init() and deinit(). Let the launcher create and destroy the main window.
-- Provide entrypoints for creating, destroying and redrawing the window condtent.
+- #include "config.h"
+- Provide entrypoints for creating (load_xxx), destroying (unload_xxx),  and redrawing (redraw_xxx) the window content. Add ENTRYPOINTS(xxx) into config7.h and ENTRYPOINTROW(xxx), into config.h
 - Make all the remaining global variables and functions in your app static - to prevent identical named globals from other apps from clashing.
 - Change all GColorBlack to backColor and GColorWhite to foreColor
 - Test your watchface for leaks. Use pebble logs and make sure you see Still allocated <0B> when you exit the app.
