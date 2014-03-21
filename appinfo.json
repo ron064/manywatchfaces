@@ -17,22 +17,20 @@
     "resources": {
         "media": [
             {
-                "characterRegex": "[APM]",
-                "type": "font",
-                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
-                "file": "fonts/Roboto-Condensed.ttf"
+                "type": "raw",
+                "name": "BIN_PRESP_DIG",
+                "file": "data/Perspective_Digits.bin"
             },
             {
-                "characterRegex": "[0-9]",
-                "type": "font",
-                "name": "FONT_ROBOTO_BOLD_SUBSET_46",
-                "file": "fonts/Roboto-Bold.ttf"
+                "type": "raw",
+                "name": "BIN_PRESP_ACOS",
+                "file": "data/Perspective_acos.bin"
             },
             {
-                "characterRegex": "[0-9a-zA-z]",
+                "characterRegex": "[A-Za-z0-9\\(\\)]",
                 "type": "font",
-                "name": "FONT_ROBOTO_BOLD_22",
-                "file": "fonts/Roboto-Bold.ttf"
+                "name": "FONT_GOTHAMXNARROW_BOLD_42",
+                "file": "fonts/GothamXNarrow-Bold.ttf"
             },
             {
                 "characterRegex": "[:0-9]",
@@ -41,10 +39,22 @@
                 "file": "fonts/Roboto-BoldCondensed.ttf"
             },
             {
-                "characterRegex": "[A-Za-z0-9\\(\\)]",
+                "characterRegex": "[0-9a-zA-z]",
                 "type": "font",
-                "name": "FONT_GOTHAMXNARROW_BOLD_42",
-                "file": "fonts/GothamXNarrow-Bold.ttf"
+                "name": "FONT_ROBOTO_BOLD_22",
+                "file": "fonts/Roboto-Bold.ttf"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "type": "font",
+                "name": "FONT_ROBOTO_BOLD_SUBSET_46",
+                "file": "fonts/Roboto-Bold.ttf"
+            },
+            {
+                "characterRegex": "[APM]",
+                "type": "font",
+                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
+                "file": "fonts/Roboto-Condensed.ttf"
             }
         ]
     }

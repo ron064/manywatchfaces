@@ -20,7 +20,8 @@ static int32_t cosa, sina, cosb, sinb, cosc, sinc;
 static int hour;
 static int d[6];
 //static GRect fullScreenRect = { { 0, 0 }, { 144, 168 } };
-
+// Modification by Ron64: removed ststic table to resources
+uint16_t * ACOS_arr;
 static const uint16_t __ACOS[1001] = {
 	32768, 32108, 31834, 31624, 31447, 31291, 31150, 31020, 30899, 30785, 30678, 30576, 30478, 30384, 30293, 30206, 30122, 30040, 29960, 29883,
 	29807, 29734, 29662, 29592, 29523, 29455, 29389, 29324, 29260, 29198, 29136, 29075, 29016, 28957, 28899, 28842, 28785, 28730, 28675, 28621,
@@ -80,6 +81,8 @@ typedef struct {
 
 #define DIGIT(num, x, y) digit[(81*(num))+((y)*9)+(x)]
 
+static char * digit;
+/*
 static char digit[810] = {	 // 10 x 9 x 9
 	// 0
 	0,0,1,1,1,1,1,0,0,
@@ -191,7 +194,7 @@ static char digit[810] = {	 // 10 x 9 x 9
 	1,1,1,1,1,1,1,1,1,
 	1,1,1,1,1,1,1,1,0
 };
-
+*/
 static GPoint3 eye = { 0, 0, EYEZ };
 
 static inline float mySqrtf(const float x) {
@@ -210,7 +213,7 @@ static inline int32_t myArccos(float x) {
 	int i = (int)(500.0*(x+1.0));
 	//	APP_LOG(APP_LOG_LEVEL_DEBUG, "myArccos(%4d->%3d)", (int)(x*1000), i);
 
-	return __ACOS[i];
+	return ACOS_arr[i];
 }
 
 static inline float length(const GPoint3 *v) {
@@ -342,6 +345,10 @@ static void handleAccel(AccelData *data, uint32_t num_samples) {
 
 void load_Perspective(void) {
 	time_t now;
+	ACOS_arr= malloc(1001*2);
+	resource_load(resource_get_handle(RESOURCE_ID_BIN_PRESP_ACOS), (uint8_t *)ACOS_arr, 1001*2);
+	digit= malloc(810);
+	resource_load(resource_get_handle(RESOURCE_ID_BIN_PRESP_DIG), (uint8_t *)digit, 810);
 	
 	time(&now);
 	handleTick(localtime(&now), 0);
@@ -353,6 +360,8 @@ void load_Perspective(void) {
 	tick_timer_service_subscribe(SECOND_UNIT, handleTick);
 	
 	accel_data_service_subscribe(0, handleAccel);
+	accel_service_set_sampling_rate(ACCEL_SAMPLING_10HZ);
+
 	timerCallback(NULL);
 	configRedraw();
 }
@@ -361,7 +370,8 @@ void unload_Perspective(void) {
 	app_timer_cancel(timer);
 	accel_data_service_unsubscribe();
 	tick_timer_service_unsubscribe();
+	free(ACOS_arr);
+	free(digit);
 	layer_destroy(layer);
 	//window_destroy(window);
 }
-
