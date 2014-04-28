@@ -1,61 +1,61 @@
 {
-    "versionLabel": "1.0.0",
-    "uuid": "97100175-6840-4ee0-b749-25b86b9f41c0",
-    "appKeys": {
-        "dummy": 0
-    },
-    "longName": "7Watchfaces",
-    "versionCode": 1,
     "capabilities": [
         ""
     ],
-    "shortName": "7Watchfaces",
-    "companyName": "MikeBikeMusic",
-    "watchapp": {
-        "watchface": false
-    },
+    "versionCode": 2,
+    "shortName": "ManyWatchfaces",
+    "uuid": "97100175-6840-4ee0-b749-25b86b9f41c0",
+    "companyName": "MikeBikeMusic & Ron64",
     "resources": {
         "media": [
             {
-                "type": "raw",
-                "name": "BIN_PRESP_DIG",
-                "file": "data/Perspective_Digits.bin"
-            },
-            {
-                "type": "raw",
-                "name": "BIN_PRESP_ACOS",
-                "file": "data/Perspective_acos.bin"
-            },
-            {
-                "characterRegex": "[A-Za-z0-9\\(\\)]",
+                "characterRegex": "[APM]",
+                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
                 "type": "font",
-                "name": "FONT_GOTHAMXNARROW_BOLD_42",
-                "file": "fonts/GothamXNarrow-Bold.ttf"
-            },
-            {
-                "characterRegex": "[:0-9]",
-                "type": "font",
-                "name": "FONT_ROBOTO_BOLD_CONDENSED_SUBSET_40",
-                "file": "fonts/Roboto-BoldCondensed.ttf"
-            },
-            {
-                "characterRegex": "[0-9a-zA-z]",
-                "type": "font",
-                "name": "FONT_ROBOTO_BOLD_22",
-                "file": "fonts/Roboto-Bold.ttf"
+                "file": "fonts/Roboto-Condensed.ttf"
             },
             {
                 "characterRegex": "[0-9]",
-                "type": "font",
                 "name": "FONT_ROBOTO_BOLD_SUBSET_46",
+                "type": "font",
                 "file": "fonts/Roboto-Bold.ttf"
             },
             {
-                "characterRegex": "[APM]",
+                "characterRegex": "[0-9a-zA-z]",
+                "name": "FONT_ROBOTO_BOLD_22",
                 "type": "font",
-                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
-                "file": "fonts/Roboto-Condensed.ttf"
+                "file": "fonts/Roboto-Bold.ttf"
+            },
+            {
+                "characterRegex": "[:0-9]",
+                "name": "FONT_ROBOTO_BOLD_CONDENSED_SUBSET_40",
+                "type": "font",
+                "file": "fonts/Roboto-BoldCondensed.ttf"
+            },
+            {
+                "characterRegex": "[A-Za-z0-9\\(\\)]",
+                "name": "FONT_GOTHAMXNARROW_BOLD_42",
+                "type": "font",
+                "file": "fonts/GothamXNarrow-Bold.ttf"
+            },
+            {
+                "name": "BIN_PRESP_ACOS",
+                "type": "raw",
+                "file": "data/Perspective_acos.bin"
+            },
+            {
+                "name": "BIN_PRESP_DIG",
+                "type": "raw",
+                "file": "data/Perspective_Digits.bin"
             }
         ]
+    },
+    "watchapp": {
+        "watchface": false
+    },
+    "versionLabel": "1.1.0",
+    "longName": "Many Watchfaces",
+    "appKeys": {
+        "dummy": 0
     }
 }

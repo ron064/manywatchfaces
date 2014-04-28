@@ -23,6 +23,45 @@ GColor foreColor = GColorWhite;
 
 app_t *app;
 
+
+// Number of overlays present 
+#define NUM_OVERLAYS 2
+
+// Record for current overlay 
+int current_overlay = 0;
+
+/* struct to hold addresses and lengths */
+typedef struct overlay_region_t_struct
+{
+	void* load_ro_base;
+	void* load_rw_base;
+	void* exec_zi_base;
+	unsigned int ro_length;
+	unsigned int zi_length;
+} overlay_region_t;
+
+// Array describing the overlays 
+extern const overlay_region_t overlay_regions[NUM_OVERLAYS];
+int overlay_prepare(int app_num)
+{
+ 	//const overlay_region_t * selected_region;
+	if (app_num>NUM_OVERLAYS)
+		return -1;
+		
+	// this function will try to load the app into the reserved area.
+	// on sucsess it will return app number
+	// on fail it will return negative error code
+	// This function should also save the active app for the debugger
+	
+	// ToDo: load into memory
+
+	// set selected region 
+	//selected_region = &overlay_regions[app_num-1];	
+	
+	return app_num;
+}
+
+	
 void configRedraw() {
 	window_redraw_with_background(backColor);
 }
@@ -45,7 +84,13 @@ static void config_swap(bool up) {
 	} else if (--whichApp < 0) {
 		whichApp += APP_COUNT;
 	}
+	if ((whichApp>=1)&&(whichApp<=2))
+	{
+		if (overlay_prepare(whichApp)<0)
+			whichApp=0; // load some watch-face that is not overlay
+	}
 	current_app = app[whichApp];
+	
 	window_load(NULL);
 	persist_write_int(KEY_WHICH_APP, whichApp);
 }
