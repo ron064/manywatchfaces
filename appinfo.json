@@ -1,61 +1,96 @@
 {
-    "capabilities": [
-        ""
-    ],
-    "versionCode": 2,
-    "shortName": "ManyWatchfaces",
-    "uuid": "97100175-6840-4ee0-b749-25b86b9f41c0",
-    "companyName": "MikeBikeMusic & Ron64",
-    "resources": {
-        "media": [
-            {
-                "characterRegex": "[APM]",
-                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
-                "type": "font",
-                "file": "fonts/Roboto-Condensed.ttf"
-            },
-            {
-                "characterRegex": "[0-9]",
-                "name": "FONT_ROBOTO_BOLD_SUBSET_46",
-                "type": "font",
-                "file": "fonts/Roboto-Bold.ttf"
-            },
-            {
-                "characterRegex": "[0-9a-zA-z]",
-                "name": "FONT_ROBOTO_BOLD_22",
-                "type": "font",
-                "file": "fonts/Roboto-Bold.ttf"
-            },
-            {
-                "characterRegex": "[:0-9]",
-                "name": "FONT_ROBOTO_BOLD_CONDENSED_SUBSET_40",
-                "type": "font",
-                "file": "fonts/Roboto-BoldCondensed.ttf"
-            },
-            {
-                "characterRegex": "[A-Za-z0-9\\(\\)]",
-                "name": "FONT_GOTHAMXNARROW_BOLD_42",
-                "type": "font",
-                "file": "fonts/GothamXNarrow-Bold.ttf"
-            },
-            {
-                "name": "BIN_PRESP_ACOS",
-                "type": "raw",
-                "file": "data/Perspective_acos.bin"
-            },
-            {
-                "name": "BIN_PRESP_DIG",
-                "type": "raw",
-                "file": "data/Perspective_Digits.bin"
-            }
-        ]
-    },
+    "longName": "Many Watchfaces",
     "watchapp": {
         "watchface": false
     },
-    "versionLabel": "1.1.0",
-    "longName": "Many Watchfaces",
+    "companyName": "MikeBikeMusic & Ron64",
+    "shortName": "ManyWatchfaces",
+    "capabilities": [
+        ""
+    ],
+    "uuid": "0334113b-c829-49fa-994b-4914f152f48a",
+    "resources": {
+        "media": [
+            {
+                "file": "data/OVL_Toe.bin",
+                "name": "OVL_TOE",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_Fuzzy.bin",
+                "name": "OVL_FUZZY",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_ill.bin",
+                "name": "OVL_ILL",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_Bit.bin",
+                "name": "OVL_BIT",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_Persp.bin",
+                "name": "OVL_PRESP",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_Words.bin",
+                "name": "OVL_WORDS",
+                "type": "raw"
+            },
+            {
+                "file": "data/OVL_Rerto.bin",
+                "name": "OVL_RETRO",
+                "type": "raw"
+            },
+            {
+                "file": "fonts/Roboto-Condensed.ttf",
+                "characterRegex": "[APM]",
+                "name": "FONT_ROBOTO_CONDENSED_SUBSET_10",
+                "type": "font"
+            },
+            {
+                "file": "fonts/Roboto-Bold.ttf",
+                "characterRegex": "[0-9]",
+                "name": "FONT_ROBOTO_BOLD_SUBSET_46",
+                "type": "font"
+            },
+            {
+                "file": "fonts/Roboto-Bold.ttf",
+                "characterRegex": "[0-9a-zA-z]",
+                "name": "FONT_ROBOTO_BOLD_22",
+                "type": "font"
+            },
+            {
+                "file": "fonts/Roboto-BoldCondensed.ttf",
+                "characterRegex": "[:0-9]",
+                "name": "FONT_ROBOTO_BOLD_CONDENSED_SUBSET_40",
+                "type": "font"
+            },
+            {
+                "file": "fonts/GothamXNarrow-Bold.ttf",
+                "characterRegex": "[A-Za-z0-9\\(\\)]",
+                "name": "FONT_GOTHAMXNARROW_BOLD_42",
+                "type": "font"
+            },
+            {
+                "file": "data/Perspective_acos.bin",
+                "name": "BIN_PRESP_ACOS",
+                "type": "raw"
+            },
+            {
+                "file": "data/Perspective_Digits.bin",
+                "name": "BIN_PRESP_DIG",
+                "type": "raw"
+            }
+        ]
+    },
+    "versionLabel": "1.3",
     "appKeys": {
         "dummy": 0
-    }
+    },
+    "versionCode": 3
 }
